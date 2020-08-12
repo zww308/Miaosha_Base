@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+
+
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!--数据库连接地址账号密码-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/miaosha"
+                        userId="root"
+                        password="971125">
+        </jdbcConnection>
+
+        <!--生成Model/DataObject类存放的位置-->
+        <javaModelGenerator targetPackage="com.zww.miaoshaproject.dataobject" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"></property>
+            <property name="trimStrings" value="true" ></property>
+        </javaModelGenerator>
+
+        <!--生成映射文件存放的位置-->
+        <sqlMapGenerator targetPackage="mapping"  targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true" ></property>
+        </sqlMapGenerator>
+
+        <!--生成Dao类存放的位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zww.miaoshaproject.dao"  targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"></property>
+        </javaClientGenerator>
+
+<!--        生成对应表及类名-->
+
+        <table tableName="promo" domainObjectName="PromoDO" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"></table>
+
+
+    </context>
+</generatorConfiguration>
